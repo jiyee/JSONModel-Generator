@@ -1,0 +1,147 @@
+{
+"offers": {
+"offerPoints": {
+  "startDate": "05/06/2015",
+  "multiplierValue": 2,
+  "pointsTypeCode": 34,
+  "pointsTypeDescription": "Hastes flexíveis",
+  "offerCategoryTypeCode": 311,
+  "offerCategoryTypeDescription": "LMPM - por critério de perfil ",
+  "manufacturers": [],
+  "products": [
+    5498,
+    5485,
+    5472,
+    5395
+  ]
+},
+"bestOffers": [
+  {
+    "isExclusiveToThisUser": true,
+    "startDate": "05/06/2015",
+    "bestOfferTypeCode": 227,
+    "bestOfferTypeDescription": "ESCOVAS DENTAIS (4.0)",
+    "discountValue": 20,
+    "offerCategoryTypeCode": 20,
+    "offerCategoryTypeDescription": "ESCOVAS DENTAIS - OM",
+    "manufacturers": [
+      {
+        "manufacturerCode": 387,
+        "manufacturerDescription": "BITUFO"
+      },
+      {
+        "manufacturerCode": 2870,
+        "manufacturerDescription": "REACH"
+      },
+      {
+        "manufacturerCode": 661,
+        "manufacturerDescription": "COLGATE"
+      },
+      {
+        "manufacturerCode": 2526,
+        "manufacturerDescription": "ORAL B"
+      },
+      {
+        "manufacturerCode": 644,
+        "manufacturerDescription": "CLOSE UP"
+      }
+    ]
+  },
+  {
+    "isExclusiveToThisUser": true,
+    "startDate": "05/06/2015",
+    "bestOfferTypeCode": 224,
+    "bestOfferTypeDescription": "SABONETES (4.0)",
+    "discountValue": 20,
+    "offerCategoryTypeCode": 17,
+    "offerCategoryTypeDescription": "SABONETES - OM",
+    "manufacturers": [
+      {
+        "manufacturerCode": 921,
+        "manufacturerDescription": "DOVE"
+      },
+      {
+        "manufacturerCode": 6380,
+        "manufacturerDescription": "NEEDS"
+      },
+      {
+        "manufacturerCode": 6500,
+        "manufacturerDescription": "PLUII"
+      },
+      {
+        "manufacturerCode": 2819,
+        "manufacturerDescription": "PROTEX"
+      }
+    ]
+  },
+  {
+    "isExclusiveToThisUser": true,
+    "startDate": "05/06/2015",
+    "bestOfferTypeCode": 228,
+    "bestOfferTypeDescription": "ANTISEPTICOS BUCAIS (4.0)",
+    "discountValue": 30,
+    "offerCategoryTypeCode": 22,
+    "offerCategoryTypeDescription": "ANTISSÉPTICOS BUCAIS - OM",
+    "manufacturers": [
+      {
+        "manufacturerCode": 2526,
+        "manufacturerDescription": "ORAL B"
+      },
+      {
+        "manufacturerCode": 4737,
+        "manufacturerDescription": "PLAX"
+      },
+      {
+        "manufacturerCode": 2067,
+        "manufacturerDescription": "LISTERINE"
+      },
+      {
+        "manufacturerCode": 644,
+        "manufacturerDescription": "CLOSE UP"
+      }
+    ]
+  },
+  {
+    "isExclusiveToThisUser": true,
+    "startDate": "05/06/2015",
+    "bestOfferTypeCode": 226,
+    "bestOfferTypeDescription": "CREMES DENTAIS (4.0)",
+    "discountValue": 15,
+    "offerCategoryTypeCode": 19,
+    "offerCategoryTypeDescription": "CREMES DENTAIS - OM",
+    "manufacturers": [
+      {
+        "manufacturerCode": 644,
+        "manufacturerDescription": "CLOSE UP"
+      },
+      {
+        "manufacturerCode": 2526,
+        "manufacturerDescription": "ORAL B"
+      },
+      {
+        "manufacturerCode": 661,
+        "manufacturerDescription": "COLGATE"
+      }
+    ]
+  }
+],
+  "bonusOffer": {
+    "startDate": "01/12/2012",
+    "endDate": "02/09/2015",
+    "bonusOfferTypeCode": 56,
+    "bonusOfferTypeDescription": "BÔNUS (135-10)",
+    "discountPercentage": "0",
+    "discountValue": 10,
+    "minPurchaseValue": 135,
+    "offerCategoryTypeCode": 388,
+    "offerCategoryTypeDescription": "BONUS SEJAA (4.0)",
+    "offerPrettyDescription": "",
+    "manufacturers": [],
+    "products": [
+      54444,
+      321,
+      12345
+    ]
+  }
+ }
+ }
