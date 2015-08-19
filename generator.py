@@ -11,7 +11,8 @@ def main():
     projectName = raw_input("What's yout project name? ")
     className = raw_input("What's the name of this class? ")
     model = ModelResults(projectName, className, importFileWithName("test.txt"))
-    print model.getInterfaces()
+
+    model.showResults()
 
 
 main()

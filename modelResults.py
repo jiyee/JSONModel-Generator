@@ -11,7 +11,9 @@ def getModelNameForKey(key):
 
 class ModelResults:
     def __init__(self, projectName, className, dictionary):
-        self.interfaces = "//\n//  " + className + ".h\n//  " + projectName + "\n//\n//  Created by json-model-generator: https://github.com/adrianovalente/JSONModel-Generator\n//  Copyright (c) 2015 Adriano Valente. All rights reserved.\n//\n\n#import \"JSONModel.h\""
+        self.interfaceHeader = "//\n//  " + className + ".h\n//  " + projectName + "\n//\n//  Created by json-model-generator: https://github.com/adrianovalente/JSONModel-Generator\n//  Copyright (c) 2015 json-model-generator. All rights reserved.\n//\n\n#import \"JSONModel.h\""
+        self.implementationHeader = "//\n//  " + className + ".m\n//  " + projectName + "\n//\n//  Created by json-model-generator: https://github.com/adrianovalente/JSONModel-Generator\n//  Copyright (c) 2015 json-model-generator. All rights reserved.\n//\n\n#import \"" + className + ".h\""
+        self.interfaces = ""
         self.protocols = ""
         self.implementations = ""
         self.__addInterfaceWithDictionary__(dictionary, className)
@@ -19,6 +21,7 @@ class ModelResults:
     def __addInterfaceWithDictionary__(self, dictionary, name):
         self.interfaces += "\n\n@interface " + name + " : JSONModel\n"
         self.protocols += "\n@protocol " + name + " <NSObject>\n"
+        self.implementations += "\n@implementation " + name + "\n@end\n\n"
         doLater = []
 
         for key in dictionary:
@@ -46,5 +49,13 @@ class ModelResults:
         for task in doLater:
             self.__addInterfaceWithDictionary__(task["dictionary"], task["name"])
 
-    def getInterfaces(self):
-        return self.interfaces
+    def showResults(self):
+        print "\nThanks for using JSONModel Generator!\n"
+        print "Here are the interface file: \n\n"
+        print self.interfaceHeader
+        print self.protocols
+        print self.interfaces
+
+        print "\n\nHere are the implementation file: \n\n"
+        print self.implementationHeader
+        print self.implementations
