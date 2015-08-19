@@ -16,7 +16,11 @@ def importFileWithName(name):
 #                 addSingleProperty(dictionary, key)
 
 def main():
-    model = ModelResults()
+
+    projectName = raw_input("What's yout project name? ")
+    className = raw_input("What's the name of this class? ")
+    model = ModelResults(projectName, className)
+
     model.addInterfaceWithDictionary(importFileWithName("test.txt"), "Teste")
     print model.getInterfaces()
 
