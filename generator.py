@@ -10,7 +10,8 @@ def main():
 
     projectName = raw_input("What's yout project name? ")
     className = raw_input("What's the name of this class? ")
-    model = ModelResults(projectName, className, importFileWithName("test.txt"))
+    fileName = raw_input("What's the source file? ")
+    model = ModelResults(projectName, className, importFileWithName(fileName))
 
     model.showResults()
 

@@ -37,7 +37,7 @@ class ModelResults:
                 if len(dictionary[key]) > 0:
                     if (isSingleType(dictionary[key][0])):
                         self.interfaces += "@property (nonatomic, strong) NSArray *" + str(key) + "; // of " + APPLE_VAR_TYPES[type(dictionary[key][0])] + "\n"
-                    elif (isinstance(dictionary[key], dict)):
+                    elif (isinstance(dictionary[key][0], dict)):
                         self.interfaces += "@property (nonatomic, strong) NSArray <" + getModelNameForKey(key) + "> *" + str(key) + ";\n"
                         doLater.append({"dictionary": dictionary[key][0], "name": getModelNameForKey(key)})
                 else:
