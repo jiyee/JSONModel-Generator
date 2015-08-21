@@ -19,35 +19,37 @@ class ModelResults:
         self.__addInterfaceWithDictionary__(dictionary, className)
 
     def __addInterfaceWithDictionary__(self, dictionary, name):
-        self.interfaces += "\n\n@interface " + name + " : JSONModel\n"
-        self.protocols += "\n@protocol " + name + " <NSObject>\n"
+        interface = "\n\n@interface " + name + " : JSONModel\n"
+
         self.implementations += "\n@implementation " + name + "\n@end\n\n"
         doLater = []
 
         for key in dictionary:
 
             if (isSingleType(dictionary[key])):
-                self.interfaces += PROPERTY_DECLARATIONS[type(dictionary[key])] + str(key) + ";\n"
+                interface += PROPERTY_DECLARATIONS[type(dictionary[key])] + str(key) + ";\n"
 
             if (isinstance(dictionary[key], dict)):
-                self.interfaces += "@property (nonatomic) id <" + getModelNameForKey(key) + "> " + str(key) + ";\n"
+                interface += "@property (nonatomic, strong) " + getModelNameForKey(key) + " *" + str(key) + ";\n"
                 doLater.append({"dictionary": dictionary[key], "name": getModelNameForKey(key)})
 
             if (isinstance(dictionary[key], list)):
                 if len(dictionary[key]) > 0:
                     if (isSingleType(dictionary[key][0])):
-                        self.interfaces += "@property (nonatomic, strong) NSArray *" + str(key) + "; // of " + APPLE_VAR_TYPES[type(dictionary[key][0])] + "\n"
+                        interface += "@property (nonatomic, strong) NSArray *" + str(key) + "; // of " + APPLE_VAR_TYPES[type(dictionary[key][0])] + "\n"
                     elif (isinstance(dictionary[key][0], dict)):
-                        self.interfaces += "@property (nonatomic, strong) NSArray <" + getModelNameForKey(key) + "> *" + str(key) + ";\n"
+                        interface += "@property (nonatomic, strong) NSArray <" + getModelNameForKey(key) + "> *" + str(key) + ";\n"
                         doLater.append({"dictionary": dictionary[key][0], "name": getModelNameForKey(key)})
+                        self.protocols += "\n@protocol " + getModelNameForKey(key) + " <NSObject>\n@end"
                 else:
                     doLater.append({"dictionary": {}, "name": getModelNameForKey(key)})
 
-        self.interfaces += "@end\n"
-        self.protocols += "@end\n"
+        interface += "@end\n"
 
         for task in doLater:
             self.__addInterfaceWithDictionary__(task["dictionary"], task["name"])
+
+        self.interfaces += interface
 
     def showResults(self):
         print "\nThanks for using JSONModel Generator!\n"
