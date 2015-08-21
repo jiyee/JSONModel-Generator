@@ -7,7 +7,7 @@ def isSingleType(instanceObject):
     return False
 
 def getModelNameForKey(key):
-    return str(key).title() + "Model"
+    return (str(key).title() + "Model").replace("_", "")
 
 class ModelResults:
     def __init__(self, projectName, className, dictionary):
